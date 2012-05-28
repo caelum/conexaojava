@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Cadastro de onibus</title>
+	<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript" ></script>
+</h:head>
+<h:body>
+	
+	<h:form>
+		<h:outputLabel>Nome</h:outputLabel>
+		<h:inputText id="nome" value="#{onibusBean.onibus.nome}" 
+		required="true" requiredMessage="Nome nao pode ficar em branco"/>
+		<h:message for="nome"/>
+		<br/>			
+		<h:outputLabel>Linha</h:outputLabel>
+		<h:inputText value="#{onibusBean.onibus.linha}"/><br/>		
+		
+		<h:commandButton value="Gravar" 
+		action="#{onibusBean.grava}"></h:commandButton>			
+	</h:form><br/>
+	<p:gmap id="mapa" zoom="15" center="-23.561057,-46.634372" 
+		type="ROADMAP" style="width:600px;height:400px" 
+		model="#{onibusBean.mapaDosPontos}">
+		<p:ajax event="pointSelect" listener="#{onibusBean.novoPonto}" update="@this"/>
+	</p:gmap><br/>	
+	<h:dataTable value="#{onibusBean.lista}" var="onibus">
+		<h:column>
+			<f:facet name="header">Nome</f:facet>
+			#{onibus.nome}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Linha</f:facet>
+			#{onibus.linha}
+		</h:column>
+	</h:dataTable>
+</h:body>
+</html>

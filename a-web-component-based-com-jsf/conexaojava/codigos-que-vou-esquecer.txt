@@ -1,0 +1,8 @@
+<p:gmap id="mapa" zoom="15" center="-23.561057,-46.634372" 
+	type="ROADMAP" style="width:600px;height:400px">
+</p:gmap>
+
+<p:gmap id="mapa" zoom="15" center="-23.561057,-46.634372" 
+	type="ROADMAP" style="width:600px;height:400px" model="#{onibusBean.mapaDosPontos}">
+	<p:ajax event="pointSelect" listener="#{onibusBean.novoPonto}" update="@this"/>
+</p:gmap>
