@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        style="@style/EstiloTitulo"
+        />
+    
+    <com.google.android.maps.MapView
+        android:id="@+id/mapa"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:apiKey="06A2cS3uljsdqyU_weDIBw8OKavci97cfBP0A6g"
+     	/>
+    
+<!--     obtenha sua key seguindo os passos do endereco abaixo: -->
+<!--     https://developers.google.com/maps/documentation/android/mapkey -->
+
+</LinearLayout>

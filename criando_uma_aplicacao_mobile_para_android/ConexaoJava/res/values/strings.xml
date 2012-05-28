@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ConexaoJava</string>
+
+    <string name="mostrar_itinerario">Mostrar no mapa</string>
+
+</resources>
